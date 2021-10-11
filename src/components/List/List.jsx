@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { CircularProgress, Grid, Typography, MenuItem, InputLabel, FormControl, Select, Card } from '@material-ui/core';
-import PlaceDetails from '../PlaceDetails/PlaceDetails';
+import React, { useState } from "react";
+import { CircularProgress, Grid, Typography, MenuItem, InputLabel, FormControl, Select, Card } from "@material-ui/core";
+import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 
 const List = () => {
     const classes = useStyles();
-    const [type, setType] = useState('restaurants');
+    const [type, setType] = useState("restaurants");
     const [rating, setRating] = useState(0);
 
     const places = [
@@ -15,16 +15,15 @@ const List = () => {
         { name: "Best Steak" },
         { name: "Cool Place" },
         { name: "Best Place" },
-        { name: "Best Steak" },        { name: "Cool Place" },
+        { name: "Best Steak" },
+        { name: "Cool Place" },
         { name: "Best Place" },
         { name: "Best Steak" },
-    ]
+    ];
 
     return (
         <div className={classes.container}>
-            <Typography variant="h4">
-                Restaurants, Hotels & Attractions around you
-            </Typography>
+            <Typography variant="h4">Restaurants, Hotels & Attractions around you</Typography>
             <FormControl className={classes.formControl}>
                 <InputLabel>Type</InputLabel>
                 <Select value={type} onChange={(e) => setType(e.target.value)}>
@@ -48,11 +47,11 @@ const List = () => {
                         <Grid item key={i} xs={12}>
                             <PlaceDetails place={place} />
                         </Grid>
-                    )
+                    );
                 })}
             </Grid>
         </div>
-    )
-}
+    );
+};
 
 export default List;
