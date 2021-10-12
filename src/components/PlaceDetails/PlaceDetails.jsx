@@ -44,9 +44,9 @@ const PlaceDetails = ({ place, selected, refProp }) => {
                         {place.ranking}
                     </Typography>
                 </Box>
-                {place?.awards?.map((award) => {
+                {place?.awards?.map((award, i) => {
                     return (
-                        <Box my={1} display="flex" justifyContent="space-between">
+                        <Box my={1} key={i} display="flex" justifyContent="space-between">
                             <img src={award.images.small} alt={award.display_name} />
                             <Typography variant="subtitle2" color="textSecondary">
                                 {award.display_name}
